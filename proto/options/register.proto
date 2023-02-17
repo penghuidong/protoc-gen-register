@@ -1,0 +1,21 @@
+syntax = "proto3";
+package register;
+option go_package = ";register";
+
+import "google/protobuf/descriptor.proto";
+
+message RegisterFileOptions {
+}
+
+message RegisterMessageOptions {
+    string regist_name = 1;
+    uint32 regist_Id = 2;
+}
+
+extend google.protobuf.FileOptions {
+    RegisterFileOptions RegFileOpts = 50001;
+}
+
+extend google.protobuf.MessageOptions {
+    RegisterMessageOptions RegMsgOpts = 50001;
+}
