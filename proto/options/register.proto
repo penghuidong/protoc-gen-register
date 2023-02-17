@@ -1,10 +1,11 @@
 syntax = "proto3";
 package register;
-option go_package = ";register";
+option go_package = "github.com/penghuidong/protoc-gen-register/extensions;register";
 
 import "google/protobuf/descriptor.proto";
 
 message RegisterFileOptions {
+    string msg_prefix = 1;
 }
 
 message RegisterMessageOptions {
