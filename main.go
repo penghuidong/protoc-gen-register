@@ -111,7 +111,7 @@ func main() {
 		}
 
 		g.P("func New", regFileOpts.MsgPrefix, "Message(msgId uint32) interface{} {")
-		g.P("if msg, ok := ", msgRegister, ".MsgIdMap[mgId]; ok {")
+		g.P("if msg, ok := ", msgRegister, ".MsgIdMap[msgId]; ok {")
 		g.P("return msg}")
 		g.P("return nil}\n")
 	}
