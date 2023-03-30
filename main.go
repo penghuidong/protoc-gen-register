@@ -105,7 +105,7 @@ func main() {
 			if !ok || regOpts == nil {
 				continue
 			}
-			g.P("func new", regFileOpts.MsgPrefix, message.GoIdent.GoName, "() interface{} {")
+			g.P("func New", regFileOpts.MsgPrefix, message.GoIdent.GoName, "() interface{} {")
 			g.P("return &", message.GoIdent.GoName, "{}")
 			g.P("}\n")
 		}
