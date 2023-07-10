@@ -63,8 +63,14 @@ func main() {
 		g.P("var ", msgRegister, "* MsgRegister")
 
 		g.P("func RegistMessage(registerId uint32, registerName string, msg interface{}) {")
+		g.P("if registerId != 0{")
 		g.P("if _, ok := ", msgRegister, ".MsgIdMap[registerId]; !ok {")
 		g.P(msgRegister, ".MsgIdMap[registerId] = msg\n}")
+		g.P("}")
+		g.P("if registerName != \"\" {")
+		g.P(" if _, ok := ", msgRegister, ".MsgNameMap[registerName]; !ok {")
+		g.P(msgRegister, ".MsgNameMap[registerName] = msg\n}")
+		g.P("}")
 		g.P("}")
 
 		g.P("func init() {")
